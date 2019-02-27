@@ -1,0 +1,221 @@
+---
+title: Chris
+---
+<!doctype html>
+
+
+
+<html>
+{% include head.html %}
+<body>
+  {% include masthead.html %}
+
+  <stratum id="about-me">
+    <stack>
+      <h1>Hello. I'm Chris.</h1>
+      <p>I am a design technologist in Amsterdam. I work across research, design, and development. I have a background in human-computer interaction and architecture. Feel free to reach out to discuss a topic, collaborate, or for a coffee. <a class="" href="{{ post.url }}">Learn more →</a></p>
+    </stack>
+  </stratum>
+
+  <stratum id="write">
+    <stack>
+      <h1>Write</h1>
+      <p>Thoughts about technology, society, and everyday design.</p>
+      <p class="light">Essayd and articles are being reformatted. There'll be more to come.</p>
+    </stack>
+
+    <stack class="posts">
+
+      <row adaptive class="highlighted-post phys-card">
+        <stack class="post-image" style="background-color: #111;">
+          <row id="siri-container">
+          </row>
+        </stack>
+        <stack class="post-description" style="background-color: #111; color: #FFF;">
+          <h4>Highlight</h4>
+          <h3>Voice Interfaces and Shopping</h3>
+          <p>The futuristic world where we can shop through our voice assistants has been slow to arrive. What fundamental limitations of voice interfaces as a medium hold back their potential for voice shopping?</p>
+          <a class="right-link block" href="{{ site.url }}/writing/2018/11/12/voice-interfaces-and-commerce.html">Read more →</a>
+        </stack>
+      </row>
+
+      <script src="https://unpkg.com/siriwave/dist/siriwave.js"></script>
+      <script>
+        var siriwidth = $('#siri-container').parent().width();
+
+        var siriWave = new SiriWave({
+          style: 'ios9',
+        	container: document.getElementById('siri-container'),
+        	width: siriwidth,
+        	height: siriwidth,
+          autostart: true,
+          amplitude: 1.5,
+          speed: 0.2
+        });
+      </script>
+
+      {% for post in site.posts %}
+      {% if post.category == "writing" and post.published == true %}
+      <row adaptive class="post">
+        <stack class="post-data">
+          <row>
+            <h3>{{ post.title }}</h3>
+          </row>
+        </stack>
+        <stack class="post-description">
+          <p>{{ post.tldr }}</p>
+          <a class="right-link block" href="{{ post.url }}">Read more →</a>
+        </stack>
+      </row>
+      {% endif %}
+      {% endfor %}
+
+    </stack>
+  </stratum>
+
+
+  <stratum id="work">
+    <stack>
+      <h1>Work</h1>
+      <p>Personal and work project samples. Given the sensitive nature of some of my work, an NDA is in effect to respect the R&D investments of the companies. I am free to discuss my process in private.</p>
+      <p class="light">Case studies and project pages are being reformatted. Availability is currently limited.</p>
+    </stack>
+    <stack>
+
+      <row adaptive class="project phys-card" data-title="bcom" data-accent-color="#0084FF" data-center-y="" data-in-view="0">
+
+        <stack class="project-image">
+          <img src="assets/img/chat2book.png">
+        </stack>
+        <stack class="project-description">
+            <h2>Conversational UI at Booking.com</h2>
+            <p class="post-date">2018</p>
+            <p>Exploring new frontiers, researching user needs, and designing intelligent conversations for future ecommerce.</p>
+        </stack>
+      </row>
+
+      <row adaptive class="project phys-card" data-title="rec" data-accent-color="#E56DD6" data-center-y="" data-in-view="0">
+        <stack class="project-image">
+          <img src="assets/img/receipt.png">
+        </stack>
+        <stack class="project-description">
+          <h2>Receipts</h2>
+          <p class="post-date">2016</p>
+          <p>Why are we carrying around paper receipts in this day and age?</p>
+        </stack>
+      </row>
+    </stack>
+  </stratum>
+
+  {% include footer.html %}
+
+
+<script>
+  var scrollDistance = 0;
+  var oldY = window.pageYOffset || document.documentElement.scrollTop;
+  $(window).scroll(function(){
+    var newY = window.pageYOffset || document.documentElement.scrollTop;
+    var momentDistance = Math.abs(newY - oldY);
+
+    oldY = newY;
+    scrollDistance += momentDistance;
+    $('#stat-scrollDistance').text(scrollDistance);
+  });
+
+  var oldClientX = -1;
+  var oldClientY = -1;
+  var totalMouseDistance = 0;
+  $(window).mousemove(function(e){
+    var newClientX = e.clientX;
+    var newClientY = e.clientY;
+
+    if(oldClientX !== -1 || oldClientY !== -1) {
+      var mouseDistance = Math.sqrt( Math.pow((oldClientX - newClientX),2) + Math.pow((oldClientY - newClientY),2) );
+      totalMouseDistance += mouseDistance;
+      $('#stat-mouseDistance').text(Math.floor(totalMouseDistance));
+    }
+
+    oldClientX = newClientX;
+    oldClientY = newClientY;
+  })
+
+</script>
+
+
+
+<script type="text/javascript">
+	$(function() {
+		enforceSquareRatio();
+    loadObjDimensions();
+  })
+
+	$(window).resize( function() {
+		enforceSquareRatio();
+	  loadObjDimensions();
+	});
+
+  function loadObjDimensions() {
+    $(".phys-card").each(function() {
+      $(this).attr("data-center-y", $(this).offset().top + ($(this).height() / 2));
+      $(this).attr("data-upper-bound", $(this).offset().top);
+      $(this).attr("data-lower-bound", $(this).offset().top + $(this).height());
+    })
+  }
+
+	function enforceSquareRatio() {
+	  $(".post-image",).each(function() {
+	    var width = $(this).width();
+	    $(this).height(width);
+	  })
+	  $(".project-image").each(function() {
+	    var width = $(this).width();
+	    $(this).height(width);
+	  })
+	}
+
+  $(window).scroll(function() {
+    var scrollMiddle = ( window.pageYOffset || document.documentElement.scrollTop ) + (window.innerHeight / 2);
+
+    $('.phys-card').each(function() {
+      if ( (scrollMiddle > $(this).data("upper-bound")) && (scrollMiddle < $(this).data("lower-bound"))) {
+
+        if ( $(this).data("in-view") == 0) {
+          $(this).find(".project-image").animate({
+						backgroundColor: $(this).data("accent-color"),
+					}, 250);
+
+          $(this).find("h2").animate({color: $(this).data(
+						"accent-color")
+					}, 250);
+        }
+
+        $(this).data("in-view", 1);
+      } else {
+        if ( $(this).data("in-view") == 1) {
+          $(this).find(".project-image").animate({
+						backgroundColor: "#FFFFFF",
+					}, 250);
+          $(this).find("h2").animate({
+						color: "#000000"
+					}, 250);
+        }
+
+        $(this).data("in-view", 0);
+
+      }
+    });
+
+		$('.phys-card').each(function() {
+			if ( $(this).data("in-view") == 1) {
+				$(this).addClass("phys-lifted");
+			} else {
+				$(this).removeClass("phys-lifted");
+			}
+		});
+
+  });
+</script>
+
+</body>
+
+</html>

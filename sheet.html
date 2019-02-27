@@ -1,0 +1,158 @@
+---
+title: Chris
+---
+<!doctype html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <title>{{  page.title }}</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="section">
+
+      <div class="header-block">
+        <div class="block">
+          <h2 class="b-header">About</h2>
+        </div>
+        <div class="block">
+          <h2>自分自身について</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="section gray">
+
+
+      <div class="header-block">
+        <div class="block">
+          <h2 class="b-header">Work</h2>
+        </div>
+        <div class="block">
+          <h2>ポートフォリオ</h2>
+        </div>
+      </div>
+
+      <div class="projects">
+        <div class="title-block">
+            <div class="sub-block"><p>Work</p><p>ポートフォリオ</p></div>
+        </div>
+        <div class="project">
+          <div class="p-jp">年：2018 </div>
+          <div class="project-section">
+            <div class="title">
+              <p class="p-label">Project プロジェクト</p>
+              <p>Booking.com: AI Agent</p>
+            </div>
+            <div class="image">
+              <p class="p-label">Summary 概要</p>
+              <p>An artificially intelligent, natural language-understanding agent.</p>
+            </div>
+          </div>
+        </div>
+        <div class="project inactive">
+          <div class="p-jp">年：2018 </div>
+          <div class="project-section">
+            <div class="title">
+              <p class="p-label">Project プロジェクト</p>
+              <p>Booking.com: Segment Expansion</p>
+            </div>
+            <div class="image">
+              <p class="p-label">Summary 概要</p>
+              <p>Researching and designing better ways to selling new product categories.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="project">
+          <div class="p-jp">年：2016 </div>
+          <div class="project-section">
+            <div class="title">
+              <p class="p-label">Concept コンセプトデザイン</p>
+              <p>Receipts for iOS</p>
+            </div>
+            <div class="image">
+              <p class="p-label">Summary 概要</p>
+              <p>Solving George Costanza's overstuffed wallet problem.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="project">
+          <div class="p-jp">年：2015 </div>
+          <div class="project-section">
+            <div class="title">
+              <p class="p-label">Group グループ</p>
+              <p>Design For America: Studio Lead</p>
+            </div>
+            <div class="image">
+              <p class="p-label">What 何</p>
+              <p>Human-centered design for American design problems.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="p-jp">年：2012 </div>
+          <div class="project-section">
+            <div class="title">
+              <p class="p-label">Project プロジェクト</p>
+              <p>Improved Health Record</p>
+            </div>
+            <div class="image">
+              <p class="p-label">Summary 概要</p>
+              <p>Winner in national competition to redesign patient health record.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="spacer"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="header-block">
+        <div class="block">
+          <h2 class="b-header">Writing</h2>
+        </div>
+        <div class="block">
+          <h2>エッセイ</h2>
+        </div>
+      </div>
+
+
+      <div class="post post-header">
+          <div class="number">
+            <p>Words</p></div>
+          <div class="title"><p>Title</p></div>
+          <div class="timestamp"><p>Date</p></div>
+      </div>
+
+
+      {% for post in site.posts %}
+      {% assign wordCount = post.content | number_of_words %}
+        <div class="post">
+            <div class="number"><p>{{ wordCount }}単語</p></div>
+            <div class="title"><p>{{ post.title }}</p></div>
+            <div class="timestamp"><p>{{ post.date | date: '%d.%m.%Y'}}</p></div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+
+<script>
+  feather.replace({class: 'glyph', 'width': 16, 'height': 16, 'stroke-width': 2, 'color': '#BB0000' })
+</script>
+</body>
+</html>

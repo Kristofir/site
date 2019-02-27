@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <title>{{  page.title }}</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="section">
+      <i data-feather="arrow-left-circle"></i> <a href="{{ site.url }}">Go back</a>
+    </div>
+
+    <div class="section post-body">
+      {{ content }}
+    </div>
+
+    <div class="section">
+      <div class="floating-actions">
+        <ul>
+            <li><i data-feather="arrow-up"></i> <a href="#">Return to top</a></li>
+            <li><i data-feather="arrow-left"></i> <a href="{{ site.url }}">Go back</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<script>
+  feather.replace({class: 'glyph', 'width': 16, 'height': 16, 'stroke-width': 2 })
+</script>
+</body>
+</html>

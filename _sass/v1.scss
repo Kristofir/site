@@ -1,0 +1,95 @@
+
+h1 {
+  font-weight: 900;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+.post-title {
+  // nothing yet
+}
+
+.post-excerpt {
+  font-weight: 300;
+}
+
+.post-body {
+  p {
+    margin-bottom: $unit;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  h1, h2, h3 {
+    font-weight: 900;
+  }
+}
+
+img.wide {
+  width: 100vw;
+}
+
+a {
+  box-sizing: border-box;
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: $red;
+}
+
+a[target*=blank]:after {
+  content: "";
+  background-image: url('/assets/glyph/external-link.svg');
+  background-size: 12px 12px;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  border-radius: 2px;
+
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
+.glyph {
+  vertical-align: middle;
+}
+
+@media (min-width: 400px) {
+
+.container {
+  margin: 0 auto;
+  max-width: 840px;
+}
+
+}
+
+@media (max-width: 400px) {
+
+.container {
+  margin: 0px;
+}
+
+}
+
+.section {
+
+}
+
+.about {
+  background-color: $ash;
+}

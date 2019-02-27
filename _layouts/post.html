@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+{% include head.html %}
+
+<body>
+
+  {% include masthead.html %}
+  <stratum class="post-header">
+    <stack>
+      <h4>Article</h>
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p>{{ page.tldr }}</p>
+    </stack>
+  </stratum>
+  <stratum>
+    <stack>
+      <item class="post-corpus">
+        {{ content }}
+      </item>
+    </stack>
+  </stratum>
+
+  {% include footer.html %}
+  
+<script>
+  feather.replace({class: 'glyph', 'width': 16, 'height': 16, 'stroke-width': 2 })
+</script>
+
+<!-- <script src="/assets/scripts/washer.js"></script> -->
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<stratum id="navigation">
+
+  <row>
+    <item class="cmyk-container">
+      <a id="cmyk" href="{{ site.url }}#">
+      </a>
+    </item>
+    <item>
+      <a href="{{ site.url }}/about.html">
+        About
+      </a>
+    </item>
+  </row>
+
+</stratum>
+
+<script>
+  var text = new Blotter.Text("CW", {
+    family : "Inter, sans-serif",
+    weight: 800,
+    size : 20,
+    fill : "#000000"
+  });
+
+  var material = new Blotter.ChannelSplitMaterial();
+
+  material.uniforms.uRotation.value = 90.0;
+  material.uniforms.uOffset.value = 0;
+
+  var blotter = new Blotter(material, { texts : text });
+
+  var scope = blotter.forText(text);
+  scope.appendTo($('#cmyk'));
+
+  $(function() {
+    var scrollTimer = 0;
+    var prevTimeStamp = 0;
+    var prevY = 0;
+    $(window).on('scroll', function(event){
+      clearTimeout(scrollTimer);
+      var currTimeStamp = event.timeStamp;
+      var currY = window.pageYOffset || document.documentElement.scrollTop;
+
+      var timeElapsed = currTimeStamp - prevTimeStamp;
+      var distanceTravelled = Math.abs(currY - prevY);
+
+      var documentVelocity = distanceTravelled / (timeElapsed);
+      material.uniforms.uOffset.value = documentVelocity / 16;
+
+      prevTimeStamp = currTimeStamp;
+      prevY = currY;
+      scrollTimer = setTimeout(function() {
+        material.uniforms.uOffset.value = 0;
+      }, 100);
+    });
+  });
+
+$(function() {
+  var waveTimer = 0;
+  $('#cmyk').on('mouseenter', function(){
+    waveTimer = setInterval(function() {
+      var tf = (1 - Math.cos(($.now() / 2000) * Math.PI)) / 12;
+      material.uniforms.uOffset.value = tf;
+    }, 50);
+  });
+  $('#cmyk').on('mouseleave', function(){
+    clearInterval(waveTimer);
+    material.uniforms.uOffset.value = 0;
+  })
+});
+
+
+</script>

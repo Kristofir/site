@@ -1,0 +1,297 @@
+@import url("https://rsms.me/inter/inter.css");
+html {
+  box-sizing: border-box;
+  font-size: 16px; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal; }
+
+ol, ul {
+  list-style: none; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+html {
+  font-family: 'Inter', sans-serif; }
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif; } }
+html {
+  font-size: 100%;
+  color: #111; }
+
+#cmyk {
+  position: fixed;
+  z-index: 999; }
+
+/*
+  Basic structural units
+*/
+stratum {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column; }
+  stratum > row, stratum > stack, stratum > grid {
+    flex: 0 1 auto;
+    width: 100%;
+    max-width: 960px;
+    margin: 16px auto; }
+    stratum > row row, stratum > row stack, stratum > row grid, stratum > stack row, stratum > stack stack, stratum > stack grid, stratum > grid row, stratum > grid stack, stratum > grid grid {
+      flex: 0 1 auto;
+      max-width: none; }
+
+grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+  @media (max-width: 640px) {
+    row[adaptive] {
+      flex-direction: column; } }
+  row > item {
+    flex: 1 1 0;
+    padding-right: 16px; }
+    row > item:first-child {
+      padding-right: 2em; }
+
+stack {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start; }
+
+/*
+  Detailed structural definitions
+*/
+stratum#navigation {
+  padding: 0; }
+  stratum#navigation > row {
+    margin: 0 auto;
+    align-items: flex-start; }
+    stratum#navigation > row > item {
+      flex: 0 0 auto; }
+      stratum#navigation > row > item a {
+        border-bottom: 2px solid transparent;
+        display: block;
+        padding: 1em;
+        font-size: 1em;
+        font-weight: 500;
+        text-decoration: none; }
+        stratum#navigation > row > item a:hover {
+          border-bottom: 2px solid #333; }
+    stratum#navigation > row .cmyk-container {
+      width: 74px; }
+      stratum#navigation > row .cmyk-container a {
+        padding: 0.8em; }
+        stratum#navigation > row .cmyk-container a:hover {
+          border-bottom: 2px solid transparent; }
+
+.post {
+  font-size: 1em;
+  width: 100%;
+  border-bottom: 1px solid #CCC;
+  padding-bottom: 32px;
+  margin-bottom: 32px; }
+  .post:last-child {
+    border-bottom: none;
+    margin-bottom: 0; }
+  .post .post-data, .post .post-description {
+    flex: 1 1 50%; }
+
+.highlighted-post {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+  transition-property: box-shadow;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  margin-bottom: 32px; }
+  .highlighted-post > * {
+    flex: 1 1 50%;
+    padding: 32px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; }
+    @media (max-width: 640px) {
+      .highlighted-post > * {
+        padding: 16px; } }
+  .highlighted-post .post-image {
+    padding: 0; }
+
+.project {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+  transition-property: box-shadow;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  margin-bottom: 32px; }
+  .project:last-child {
+    margin-bottom: 0; }
+  .project > * {
+    flex: 1 1 50%;
+    padding: 32px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; }
+    @media (max-width: 640px) {
+      .project > * {
+        padding: 16px; } }
+  .project .project-image img {
+    height: 100%;
+    margin: auto; }
+  .project .project-description {
+    justify-content: center; }
+
+.phys-lifted {
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2); }
+
+.post-header {
+  height: 90vh;
+  align-items: center;
+  justify-content: center; }
+
+stratum#navigation {
+  background-color: #F9F9F9;
+  border-bottom: 1px solid #CCC; }
+
+stratum#about-me {
+  background-color: #F9F9F9;
+  font-size: 1.2em; }
+
+stratum#write,
+stratum#work {
+  border-top: 1px solid #CCC; }
+
+stratum#end {
+  background-color: #222;
+  color: #DDD; }
+
+@media (min-width: 641px) {
+  .project {
+    background-color: #FFF;
+    /*
+    &:nth-child(odd) > stack:last-child {
+      border-right: 1px solid #CCC;
+    }
+    */ }
+    .project > stack {
+      border-right: 1px solid #EEE; }
+    .project > stack:last-child {
+      border-right: none; }
+
+  /*
+  row.project:nth-child(odd) {
+    flex-direction: row-reverse;
+    .project-description {
+      text-align: right;
+      align-items: flex-end;
+    }
+  }
+  */ }
+@media (max-width: 640px) {
+  .project .project-image {
+    border-bottom: 1px solid #CCC; } }
+.highlighted-post {
+  background-color: #FFF; }
+
+a {
+  font-size: 1em;
+  line-height: 1.6em;
+  color: #0084FF;
+  text-decoration: none; }
+  a:hover {
+    color: #6bb7ff; }
+
+h1 {
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2em;
+  margin-bottom: 0.2em; }
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2em;
+  margin-bottom: 0.2em; }
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: -0em;
+  line-height: 1.2em;
+  margin-bottom: 0.2em; }
+
+h4 {
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: +0.04em;
+  line-height: 1.6em;
+  color: #0084FF; }
+
+p {
+  font-size: 1em;
+  line-height: 1.6em;
+  margin-bottom: 1em; }
+  p:last-child {
+    margin-bottom: 0; }
+  p.light {
+    opacity: 0.5; }
+
+ul {
+  margin-bottom: 1em; }
+  ul li {
+    list-style: disc;
+    font-size: 1em;
+    line-height: 1.6em;
+    margin-left: 1em; }
+
+blockquote {
+  margin-left: 2em; }
+
+.post-corpus {
+  font-size: 1.2em; }
+  @media (max-width: 680px) {
+    .post-corpus {
+      font-size: 1em; } }
+  .post-corpus p, .post-corpus ul, .post-corpus ol {
+    margin-bottom: 1em; }
+
+.post-date {
+  font-size: 1em;
+  font-weight: 200;
+  margin-right: 1em; }
+
+.post-tag {
+  font-size: 1em;
+  font-weight: 400;
+  margin-right: 1em; }
+
+.post-header {
+  font-size: 2em;
+  user-select: none; }
+  @media (max-width: 680px) {
+    .post-header {
+      font-size: 1em; } }
+  .post-header h1 {
+    font-weight: 600;
+    line-height: 1.2em; }
+  .post-header h4 {
+    font-size: 1.2rem; }
