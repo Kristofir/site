@@ -1,6 +1,74 @@
+  <!--
+  <stratum id="end">
+    <stack>
+      <row>
+        <h3>This is the end but also a beginning.</h3>
+      </row>
+    </stack>
+    <row>
+      <item><h1>Get in touch.</h1></item>
+      <item flex-width="2">
+        <stack>
+          <ol>
+            <li>Email me at <a href="mailto:hello@chriswan.me">hello@chriswan.me</a></li>
+            <li>Message or call (EU) <a href="sms://+31641499302">+31 6 41499302</a></li>
+            <li>Message or call (US) <a href="sms://+16306870915">+1 630 687 0915</a></li>
+          </ol>
+        </stack>
+      </item>
+      <item>
+        <p>Let's talk about tech, society, or your business' challenges.<p>
+      </item>
+    </row>
+  </stratum>
+  -->
 
   <stratum id="end">
     <stack>
-      <p>I built this site using HTML, SASS, Jquery, Jekyll, and a few other libraries.  Feel free to take a look at the code.</p>
+      <row>
+        <h3>This is the end—but also a beginning.</h3>
+      </row>
     </stack>
+    <row adaptive>
+      <item><h2>Get in touch.</h2></item>
+      <item>
+        <stack>
+          <row>
+            <svg class="icon">
+              <use xlink:href="{{ site.url}}/assets/icons/feather-sprite.svg#mail" />
+            </svg>
+            &nbsp;Email
+          </row>
+          <row>
+            <a href="mailto:hello@chriswan.me">hello@chriswan.me</a>
+          </row>
+        </stack>
+      </item>
+      <item>
+        <stack>
+          <row>
+            <svg class="icon">
+              <use xlink:href="{{ site.url}}/assets/icons/feather-sprite.svg#message-circle" />
+            </svg>
+            &nbsp;Phone (EU)
+          </row>
+          <row>
+            <a href="sms://+31641499302">+31 6 41499302</a>
+          </row>
+        </stack>
+      </item>
+      <item>
+        <stack>
+          <row>
+            <svg class="icon">
+              <use xlink:href="{{ site.url}}/assets/icons/feather-sprite.svg#message-circle" />
+            </svg>
+            &nbsp;Phone (US)
+          </row>
+          <row>
+            <a href="sms://+16306870915">+1 630 687 0915</a>
+          </row>
+        </stack>
+      </item>
+    </row>
   </stratum>

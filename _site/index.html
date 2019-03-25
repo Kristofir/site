@@ -9,15 +9,14 @@
   <title>Chris</title>
   <link rel="stylesheet" href="/assets/css/styles.css">
   <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://unpkg.com/bricks.js/dist/bricks.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-  <script src="http://localhost:4000/assets/scripts/blotter.min.js"></script>
-  <script src="http://localhost:4000/assets/scripts/channelSplitMaterial.js"></script>
-  <script src="http://localhost:4000/assets/scripts/jquery.drawsvg.min.js"></script>
 
 
 </head>
@@ -26,12 +25,25 @@
   <stratum id="navigation">
 
   <row>
-    <item class="cmyk-container">
-      <a id="cmyk" href="http://localhost:4000#">
+    <item>
+      <a href="http://localhost:4000#">
+        <svg class="icon">
+          <use xlink:href="http://localhost:4000/assets/icons/feather-sprite.svg#home" />
+        </svg>
       </a>
     </item>
     <item>
-      <a href="http://localhost:4000/about.html">
+      <a href="/#thoughts">
+        Thoughts
+      </a>
+    </item>
+    <item>
+      <a href="/#work">
+        Work
+      </a>
+    </item>
+    <item>
+      <a href="/about.html">
         About
       </a>
     </item>
@@ -40,7 +52,8 @@
 </stratum>
 
 <script>
-  var text = new Blotter.Text("CW", {
+  /*
+  var text = new Blotter.Text("Chris", {
     family : "Inter, sans-serif",
     weight: 800,
     size : 20,
@@ -93,7 +106,7 @@ $(function() {
     material.uniforms.uOffset.value = 0;
   })
 });
-
+*/
 
 </script>
 
@@ -101,29 +114,29 @@ $(function() {
   <stratum id="about-me">
     <stack>
       <h1>Hello. I'm Chris.</h1>
-      <p>I am a design technologist in Amsterdam. I work across research, design, and development. I have a background in human-computer interaction and architecture. Feel free to reach out to discuss a topic, collaborate, or for a coffee. <a class="" href="">Learn more →</a></p>
+      <p>I am a design technologist in Amsterdam, and I work across research, design, and development. Feel free to reach out to discuss a topic, collaborate, or for a coffee. <a class="" href="http://localhost:4000/about.html">Learn more →</a></p>
     </stack>
   </stratum>
 
-  <stratum id="write">
+  <stratum id="thoughts">
     <stack>
-      <h1>Write</h1>
-      <p>Thoughts about technology, society, and everyday design.</p>
-      <p class="light">Essayd and articles are being reformatted. There'll be more to come.</p>
+      <h2>Thoughts</h2>
+      <p>Things I'm thinking about technology, society, and everyday design.</p>
+      <p><badge>Under Construction</badge> Essays and articles are being reformatted. There'll be more to come.</p>
     </stack>
 
     <stack class="posts">
 
       <row adaptive class="highlighted-post phys-card">
-        <stack class="post-image" style="background-color: #111;">
+        <stack class="post-image" style="background-color: #000;">
           <row id="siri-container">
           </row>
         </stack>
-        <stack class="post-description" style="background-color: #111; color: #FFF;">
+        <stack class="post-description">
           <h4>Highlight</h4>
-          <h3>Voice Interfaces and Shopping</h3>
+          <h3>Travails of Shopping by Voice</h3>
           <p>The futuristic world where we can shop through our voice assistants has been slow to arrive. What fundamental limitations of voice interfaces as a medium hold back their potential for voice shopping?</p>
-          <a class="right-link block" href="http://localhost:4000/writing/2018/11/12/voice-interfaces-and-commerce.html">Read more →</a>
+          <a class="bubble block" href="http://localhost:4000/writing/2018/11/12/Travails-of-Shopping-by-Voice.html">Read more →</a>
         </stack>
       </row>
 
@@ -149,12 +162,12 @@ $(function() {
       <row adaptive class="post">
         <stack class="post-data">
           <row>
-            <h3>Voice Interfaces And Commerce</h3>
+            <h3>Travails Of Shopping By Voice</h3>
           </row>
         </stack>
         <stack class="post-description">
           <p>The futuristic world where we can shop through our voice assistants has been slow to arrive. What fundamental limitations of voice interfaces as a medium hold back their potential for voice shopping?</p>
-          <a class="right-link block" href="/writing/2018/11/12/voice-interfaces-and-commerce.html">Read more →</a>
+          <a class="bubble block" href="/writing/2018/11/12/Travails-of-Shopping-by-Voice.html">Read more →</a>
         </stack>
       </row>
       
@@ -166,9 +179,12 @@ $(function() {
 
   <stratum id="work">
     <stack>
-      <h1>Work</h1>
-      <p>Personal and work project samples. Given the sensitive nature of some of my work, an NDA is in effect to respect the R&D investments of the companies. I am free to discuss my process in private.</p>
-      <p class="light">Case studies and project pages are being reformatted. Availability is currently limited.</p>
+      <h2>Work</h2>
+      <p>Things I've worked on for others or myself.</p>
+
+      <p><badge>NDA</badge> Some of my work is sensitive and NDA-protected.</p>
+
+      <p><badge>Under Construction</badge> Case studies and project pages are being reformatted.</p>
     </stack>
     <stack>
 
@@ -197,11 +213,79 @@ $(function() {
     </stack>
   </stratum>
 
-  
+    <!--
   <stratum id="end">
     <stack>
-      <p>I built this site using HTML, SASS, Jquery, Jekyll, and a few other libraries.  Feel free to take a look at the code.</p>
+      <row>
+        <h3>This is the end but also a beginning.</h3>
+      </row>
     </stack>
+    <row>
+      <item><h1>Get in touch.</h1></item>
+      <item flex-width="2">
+        <stack>
+          <ol>
+            <li>Email me at <a href="mailto:hello@chriswan.me">hello@chriswan.me</a></li>
+            <li>Message or call (EU) <a href="sms://+31641499302">+31 6 41499302</a></li>
+            <li>Message or call (US) <a href="sms://+16306870915">+1 630 687 0915</a></li>
+          </ol>
+        </stack>
+      </item>
+      <item>
+        <p>Let's talk about tech, society, or your business' challenges.<p>
+      </item>
+    </row>
+  </stratum>
+  -->
+
+  <stratum id="end">
+    <stack>
+      <row>
+        <h3>This is the end—but also a beginning.</h3>
+      </row>
+    </stack>
+    <row adaptive>
+      <item><h2>Get in touch.</h2></item>
+      <item>
+        <stack>
+          <row>
+            <svg class="icon">
+              <use xlink:href="http://localhost:4000/assets/icons/feather-sprite.svg#mail" />
+            </svg>
+            &nbsp;Email
+          </row>
+          <row>
+            <a href="mailto:hello@chriswan.me">hello@chriswan.me</a>
+          </row>
+        </stack>
+      </item>
+      <item>
+        <stack>
+          <row>
+            <svg class="icon">
+              <use xlink:href="http://localhost:4000/assets/icons/feather-sprite.svg#message-circle" />
+            </svg>
+            &nbsp;Phone (EU)
+          </row>
+          <row>
+            <a href="sms://+31641499302">+31 6 41499302</a>
+          </row>
+        </stack>
+      </item>
+      <item>
+        <stack>
+          <row>
+            <svg class="icon">
+              <use xlink:href="http://localhost:4000/assets/icons/feather-sprite.svg#message-circle" />
+            </svg>
+            &nbsp;Phone (US)
+          </row>
+          <row>
+            <a href="sms://+16306870915">+1 630 687 0915</a>
+          </row>
+        </stack>
+      </item>
+    </row>
   </stratum>
 
 

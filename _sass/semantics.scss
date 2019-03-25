@@ -2,22 +2,21 @@
 
 stratum#navigation {
   background-color: #F9F9F9;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #EEE;
 }
 
 stratum#about-me {
   background-color: #F9F9F9;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
-stratum#write,
+stratum#thoughts,
 stratum#work {
-  border-top: 1px solid #CCC;
+  border-top: 1px solid #EEE;
 }
 
 stratum#end {
-  background-color: #222;
-  color: #DDD;
+  border-top: 1px solid #EEE;
 }
 
 .project-description {
@@ -60,7 +59,7 @@ stratum#end {
 @media (max-width: 640px) {
   .project {
     .project-image {
-      border-bottom: 1px solid #CCC;
+      border-bottom: 1px solid #EEE;
     }
   }
 }
@@ -84,30 +83,50 @@ a {
   }
 }
 
-a.rightlink {
+a.bubble {
+  border: 1px solid #0084FF;
+  padding: 0.5em 1em;
+  border-radius: 4em;
+  transition-property: all;
+	transition-duration: 0.4s;
+	transition-timing-function: ease-in-out;
+    box-shadow: 0px 0px 0px 0px rgba(0,65,140,0.2);
+
+  margin-left: auto;
+    position: relative;
+    top: 0em;
+
+  &:hover,
+  &:active {
+    box-shadow: 0px 4px 16px 0px rgba(0,65,140,0.3);
+    background-color: #0088FF;
+    color: #FFF;
+  }
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.2em;
+  line-height: 1em;
+  letter-spacing: -0.03em;
+
   margin-bottom: 0.2em;
 }
 
 h2 {
-  font-size: 1.5em;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-size: 2em;
+  font-weight: 700;
   line-height: 1.2em;
+  letter-spacing: -0.02em;
+
   margin-bottom: 0.2em;
 }
 
 h3 {
   font-size: 1.5em;
   font-weight: 600;
-  letter-spacing: -0em;
-  line-height: 1.2em;
+  line-height: 1.4em;
+  letter-spacing: -0.02em;
   margin-bottom: 0.2em;
 }
 
@@ -116,11 +135,13 @@ h4 {
   font-weight: 600;
   letter-spacing: +0.04em;
   line-height: 1.6em;
-  color: #0084FF;
+
+  margin-bottom: 1em;
 }
 
 p {
   font-size: 1em;
+  letter-spacing: +0.008em;
   line-height: 1.6em;
   margin-bottom: 1em;
   &:last-child {
@@ -144,8 +165,34 @@ ul {
 }
 
 blockquote {
-  margin-left: 2em;
+  margin-left: 1em;
 }
+
+badge {
+  display: inline-block;
+  font-size: 0.8em;
+  letter-spacing: +0.05em;
+  font-weight: 600;
+  padding: 0.1em 0.4em;
+  color: #FFF;
+  background-color: #0084FF;
+  border-radius: 4px;
+}
+
+.icon {
+  width: 1.2em;
+  height: 1.2em;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+
+  vertical-align: text-top;
+}
+
+
+
 
 .post-corpus {
   font-size: 1.2em;

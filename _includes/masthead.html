@@ -1,12 +1,25 @@
 <stratum id="navigation">
 
   <row>
-    <item class="cmyk-container">
-      <a id="cmyk" href="{{ site.url }}#">
+    <item>
+      <a href="{{ site.url }}#">
+        <svg class="icon">
+          <use xlink:href="{{ site.url}}/assets/icons/feather-sprite.svg#home" />
+        </svg>
       </a>
     </item>
     <item>
-      <a href="{{ site.url }}/about.html">
+      <a href="{{ base.url }}/#thoughts">
+        Thoughts
+      </a>
+    </item>
+    <item>
+      <a href="{{ base.url }}/#work">
+        Work
+      </a>
+    </item>
+    <item>
+      <a href="{{ base.url }}/about.html">
         About
       </a>
     </item>
@@ -15,7 +28,8 @@
 </stratum>
 
 <script>
-  var text = new Blotter.Text("CW", {
+  /*
+  var text = new Blotter.Text("Chris", {
     family : "Inter, sans-serif",
     weight: 800,
     size : 20,
@@ -68,6 +82,6 @@ $(function() {
     material.uniforms.uOffset.value = 0;
   })
 });
-
+*/
 
 </script>

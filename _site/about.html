@@ -7,15 +7,14 @@
   <title>Chris</title>
   <link rel="stylesheet" href="/assets/css/styles.css">
   <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://unpkg.com/bricks.js/dist/bricks.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-  <script src="http://localhost:4000/assets/scripts/blotter.min.js"></script>
-  <script src="http://localhost:4000/assets/scripts/channelSplitMaterial.js"></script>
-  <script src="http://localhost:4000/assets/scripts/jquery.drawsvg.min.js"></script>
 
 
 </head>
@@ -24,12 +23,25 @@
   <stratum id="navigation">
 
   <row>
-    <item class="cmyk-container">
-      <a id="cmyk" href="http://localhost:4000#">
+    <item>
+      <a href="http://localhost:4000#">
+        <svg class="icon">
+          <use xlink:href="http://localhost:4000/assets/icons/feather-sprite.svg#home" />
+        </svg>
       </a>
     </item>
     <item>
-      <a href="http://localhost:4000/about.html">
+      <a href="/#thoughts">
+        Thoughts
+      </a>
+    </item>
+    <item>
+      <a href="/#work">
+        Work
+      </a>
+    </item>
+    <item>
+      <a href="/about.html">
         About
       </a>
     </item>
@@ -38,7 +50,8 @@
 </stratum>
 
 <script>
-  var text = new Blotter.Text("CW", {
+  /*
+  var text = new Blotter.Text("Chris", {
     family : "Inter, sans-serif",
     weight: 800,
     size : 20,
@@ -91,7 +104,7 @@ $(function() {
     material.uniforms.uOffset.value = 0;
   })
 });
-
+*/
 
 </script>
 
@@ -99,50 +112,68 @@ $(function() {
   <stratum id="about-me">
     <stack>
       <h1>Hello. I'm Chris.</h1>
-      <p>I am a design technologist in Amsterdam. I work across research, design, and development. I have a background in human-computer interaction and architecture. Feel free to reach out to discuss a topic, collaborate, or for a coffee.</p>
+      <p>I am a design technologist in Amsterdam, and I work across research, design, and development. Feel free to reach out to discuss a topic, collaborate, or for a coffee.</p>
     </stack>
   </stratum>
 
 	<stratum>
-    <row>
+    <row adaptive gapped>
   	  <item>
-  			<h2>What's my story?</h2>
-        <p>I'm originally from the United States. I went to the University of Illinois of Urbana-Champaign where I studied architecture and human-computer interaction. I was attracted to the Netherlands by its quality of life and its culture.</p>
+  			<h2>Background</h2>
+        <p>I'm from Chicago. I grew up in a vibrantly multicultural environment, bouncing between Chicago, San Francisco, and Taipei.</p>
+        <p>I studied architecture and human-computer interaction University of Illinois at Urbana-Champaign and had studied abroad at Tongji University in Shanghai, China. During university, I was involved with <a href="http://designforamerica.com/" target="_blank">Design For America</a>, an organization that advocates human-centered design for tackling social problems.</p>
+        <p>I was a designer at Booking.com for one and a half years, where I worked on conversational interfaces and product expansion. Currently, I consult for various startups.</p>
   		</item>
   	  <item>
-  			<h2>What is a design technologist?</h2>
-        <p>A design technologist is also known as a full-stack designer. I have a strong technical and non-technical skillset centered on design but also reaches into research and development. In collaborative environments, I work in a deeply-integrated manner with researchers and engineers. In more independent settings, I am capable of flexing between the three domains.</p>
+  			<h2>Design technologist?</h2>
+        <p>A design technologist is also known as a full-stack designer. I have a strong technical and non-technical skillset centered on design but also reaching across research and development.</p>
+
+        <p>In collaborative environments, I work in a deeply-integrated manner with researchers and engineers. In more independent settings, I am capable of flexing between the three domains.</p>
   		</item>
     </row>
 	</stratum>
 
 	<stratum>
 	  <stack>
-			<h2>How can I help you?</h2>
-      <p>These are my guiding beliefs and ideals.</p>
+			<h2>How can I help?</h2>
 		</stack>
-    <row adaptive>
+    <row adaptive gapped>
       <item>
-        <h3>Join your team</h3>
-        <p>I offer freelance and consulting services to help you achieve your goals. If you're a non-profit or not-for-profit working on a social cause I support, I offer my services pro bono or at a reduced rate.</p>
+        <h4>Freelance</h4>
+        <p>I offer freelance and consulting services to help you achieve your goals.</p>
       </item>
       <item>
-        <h3>Discuss</h3>
-        <p>I enjoy discussing issues around technology and society. I'm interested in conversational interfaces, sociable media, cooperative living, and trust systems.</p>
+        <h4>Social causes</h4>
+        <p>I offer pro bono and flexible rate services for non-profits working on causes I support.</p>
       </item>
       <item>
-        <h3>Grab a coffee</h3>
-        <p>If you're in the Amsterdam area and you'd like to meet up, I'd be more than happy to do so over a cup of coffee.</p>
+        <h4>Grab a coffee</h4>
+        <p>Are you in Amsterdam? I love meeting new people. Let's get a coffee and talk!</p>
       </item>
     </row>
 	</stratum>
 
-  <stratum>
+  <stratum id="end">
     <stack>
-      <h2>How can you reach me?</h2>
-      <p>You can simply email me at <a href="mailto:hello@chriswan.me">hello@chriswan.me</a>.</p>
+      <row>
+        <h3>Let's create together.</h3>
+      </row>
     </stack>
+    <row adaptive>
+      <item><h2>Get in touch.</h2></item>
+      <item>
+        <a href="mailto:hello@chriswan.me">hello@chriswan.me</a>
+      </item>
+      <item>
+        <a href="sms://+31641499302">+31 6 41499302</a> (EU)
+      </item>
+      <item>
+        <a href="sms://+16306870915">+1 630 687 0915</a> (US)
+      </item>
+    </row>
   </stratum>
+
+
 </body>
 
 </html>

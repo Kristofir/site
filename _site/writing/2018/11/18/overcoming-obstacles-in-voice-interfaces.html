@@ -7,15 +7,14 @@
   <title>Overcoming Obstacles In Voice Interfaces</title>
   <link rel="stylesheet" href="/assets/css/styles.css">
   <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://unpkg.com/bricks.js/dist/bricks.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-  <script src="http://localhost:4000/assets/scripts/blotter.min.js"></script>
-  <script src="http://localhost:4000/assets/scripts/channelSplitMaterial.js"></script>
-  <script src="http://localhost:4000/assets/scripts/jquery.drawsvg.min.js"></script>
 
 
 </head>
@@ -26,12 +25,25 @@
   <stratum id="navigation">
 
   <row>
-    <item class="cmyk-container">
-      <a id="cmyk" href="http://localhost:4000#">
+    <item>
+      <a href="http://localhost:4000#">
+        <svg class="icon">
+          <use xlink:href="http://localhost:4000/assets/icons/feather-sprite.svg#home" />
+        </svg>
       </a>
     </item>
     <item>
-      <a href="http://localhost:4000/about.html">
+      <a href="/#thoughts">
+        Thoughts
+      </a>
+    </item>
+    <item>
+      <a href="/#work">
+        Work
+      </a>
+    </item>
+    <item>
+      <a href="/about.html">
         About
       </a>
     </item>
@@ -40,7 +52,8 @@
 </stratum>
 
 <script>
-  var text = new Blotter.Text("CW", {
+  /*
+  var text = new Blotter.Text("Chris", {
     family : "Inter, sans-serif",
     weight: 800,
     size : 20,
@@ -93,7 +106,7 @@ $(function() {
     material.uniforms.uOffset.value = 0;
   })
 });
-
+*/
 
 </script>
 
@@ -148,14 +161,82 @@ $(function() {
     </stack>
   </stratum>
 
-  
+    <!--
   <stratum id="end">
     <stack>
-      <p>I built this site using HTML, SASS, Jquery, Jekyll, and a few other libraries.  Feel free to take a look at the code.</p>
+      <row>
+        <h3>This is the end but also a beginning.</h3>
+      </row>
     </stack>
+    <row>
+      <item><h1>Get in touch.</h1></item>
+      <item flex-width="2">
+        <stack>
+          <ol>
+            <li>Email me at <a href="mailto:hello@chriswan.me">hello@chriswan.me</a></li>
+            <li>Message or call (EU) <a href="sms://+31641499302">+31 6 41499302</a></li>
+            <li>Message or call (US) <a href="sms://+16306870915">+1 630 687 0915</a></li>
+          </ol>
+        </stack>
+      </item>
+      <item>
+        <p>Let's talk about tech, society, or your business' challenges.<p>
+      </item>
+    </row>
+  </stratum>
+  -->
+
+  <stratum id="end">
+    <stack>
+      <row>
+        <h3>This is the end—but also a beginning.</h3>
+      </row>
+    </stack>
+    <row adaptive>
+      <item><h2>Get in touch.</h2></item>
+      <item>
+        <stack>
+          <row>
+            <svg class="icon">
+              <use xlink:href="http://localhost:4000/assets/icons/feather-sprite.svg#mail" />
+            </svg>
+            &nbsp;Email
+          </row>
+          <row>
+            <a href="mailto:hello@chriswan.me">hello@chriswan.me</a>
+          </row>
+        </stack>
+      </item>
+      <item>
+        <stack>
+          <row>
+            <svg class="icon">
+              <use xlink:href="http://localhost:4000/assets/icons/feather-sprite.svg#message-circle" />
+            </svg>
+            &nbsp;Phone (EU)
+          </row>
+          <row>
+            <a href="sms://+31641499302">+31 6 41499302</a>
+          </row>
+        </stack>
+      </item>
+      <item>
+        <stack>
+          <row>
+            <svg class="icon">
+              <use xlink:href="http://localhost:4000/assets/icons/feather-sprite.svg#message-circle" />
+            </svg>
+            &nbsp;Phone (US)
+          </row>
+          <row>
+            <a href="sms://+16306870915">+1 630 687 0915</a>
+          </row>
+        </stack>
+      </item>
+    </row>
   </stratum>
 
-  
+
 <script>
   feather.replace({class: 'glyph', 'width': 16, 'height': 16, 'stroke-width': 2 })
 </script>
